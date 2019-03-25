@@ -1,0 +1,30 @@
+{
+  "name": "text-analysis",
+  "version": "1.0.0",
+  "description": "## Contents",
+  "main": "textalyze.js",
+  "dependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
+  },
+  "devDependencies": {
+    "eslint-plugin-jest": "^22.4.1",
+    "jest": "^24.5.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfarmer/text-analysis.git"
+  },
+  "author": "Jesse Farmer <jesse@20bits.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfarmer/text-analysis/issues"
+  },
+  "homepage": "https://github.com/jfarmer/text-analysis#readme"
+}
