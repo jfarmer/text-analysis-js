@@ -42,10 +42,9 @@ To get started, you'll need to...
 1.  Navigate to the repository on your local computer
 1.  Open the repository in [Sublime Text 3][sublime-text-3], [Atom][atom], [VS Code](vs-code), or
     your editor of choice.
+1.  Run `npm install` to install the required packages.
 1.  Read the [Why Are We Doing This?](#why-are-we-doing-this) section
 1.  Start working on the [Iterations](#iterations)
-
-Run
 
 ### Files In This Repository
 
@@ -80,6 +79,14 @@ iteration.  Rather, they serve three important roles:
 Using hard-coded examples, write a method that takes an `Array` containing
 arbitrary and possibly duplicated items as input and returns a `Map` containing
 item/count pairs.  Print out those pairs in a sensible way.
+
+This iteration has tests written for you.  Run
+
+```console
+$ npm test
+```
+
+to see the failing tests.  Remember to run `npm install` first!
 
 If you're no familiar with the `Map` data type in JavaScript, read the [Map documentation on MDN][docs-mdn-map].
 
