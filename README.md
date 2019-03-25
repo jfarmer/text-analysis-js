@@ -257,7 +257,7 @@ of the histogram.
 [gutenberg]: http://www.gutenberg.org/
 [moby-dick]: http://www.gutenberg.org/cache/epub/2701/pg2701.txt
 [wiki-histogram]: http://en.wikipedia.org/wiki/Histogram
-[img-moby-dick-screenshot]: http://f.cl.ly/items/0T0X1t1s2F3F2u0r1C2x/moby-dick-screenshot.png
+[img-moby-dick-screenshot]: https://dad6pq311uj47.cloudfront.net/items/3K3y3H0A422Z2M0B253P/Screen%20Shot%202019-03-25%20at%201.10.24%20PM.png
 [docs-javascript-string-tolowercase]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
 [img-cli-arguments-screenshot]: https://dad6pq311uj47.cloudfront.net/items/3j153T1p1X1W282h3D3y/Screen%20Shot%202019-03-25%20at%2012.01.58%20PM.png
 [docs-mdn-map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
