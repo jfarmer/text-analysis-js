@@ -65,14 +65,23 @@ more experienced developers warmed up.
 ## Iterations
 
 This project is structured as a sequence of iterations, each of which builds on
-previous iterations.  We do *not* expect students to complete each and every
-iteration.  Rather, they serve three important roles:
+previous iterations. Iterations serve three important roles:
 
 1.  Models for good engineering and product management, i.e., what do we build,
     in what order, and why?
 1.  Natural checkpoints to ask for a code review or other feedback
 1.  The ability to accommodate students with different interests, skill levels,
     and time constraints.
+
+## Requesting Feedback
+
+To request feedback on your code, use the standard [GitHub flow](https://guides.github.com/introduction/flow/) process.
+
+1.  Fork this repository to your own account.
+1.  For each iteration, create a feature branch
+1.  When you're ready for feedback, submit a pull request from your feature branch to
+    your master branch.
+1.  Ping the instructors in Slack to get a review.
 
 ## [v0.1] Basic Count Statistics
 
