@@ -14,6 +14,16 @@
 function itemCounts(array) {
   let counts = new Map();
 
+  array.forEach(item => {
+
+    if (!counts.has(item)) {
+      counts.set(item, 0);
+    }
+
+    counts.set(item, parseInt(counts.get(item)) + 1);
+
+  });
+
   // Your code here.
   // Run 'npm test' to see what tests need to pass.
 
