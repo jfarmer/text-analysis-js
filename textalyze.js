@@ -12,12 +12,10 @@
  * @param {Map} counts - A Map containing the counts of the items in the input array
  */
 function itemCounts(array) {
-  const counts = new Map();
-
-  // Your code here.
-  // Run 'npm test' to see what tests need to pass.
-
-  return counts;
+  return array.reduce((counts, item) => {
+    const count = counts.get(item) || 0;
+    return counts.set(item, count + 1);
+  }, new Map());
 }
 
 module.exports = { itemCounts };
