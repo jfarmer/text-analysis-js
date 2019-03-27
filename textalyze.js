@@ -14,8 +14,10 @@
 function itemCounts(array) {
   let counts = new Map();
 
-  // Your code here.
-  // Run 'npm test' to see what tests need to pass.
+  for (let a of array) {
+    let value = counts.has(a) ? counts.get(a) : 0;
+    counts.set(a, value + 1);
+  }
 
   return counts;
 }
