@@ -12,7 +12,7 @@
  * @param {Map} counts - A Map containing the counts of the items in the input array
  */
 function itemCounts(array) {
-  let counts = new Map();
+  const counts = new Map();
 
   // Your code here.
   // Run 'npm test' to see what tests need to pass.
