@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "node textalyze.js",
+    "lint": "eslint .",
     "test": "jest"
   },
   "repository": {
