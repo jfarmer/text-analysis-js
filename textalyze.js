@@ -9,7 +9,7 @@
 /**
  * Given an input Array, returns a Map containing the count of each item in the input.
  * @param {Array} array - The array of items to count
- * @param {Map} counts - A Map containing the counts of the items in the input array
+ * @returns {Map} counts - A Map containing the counts of the items in the input array
  */
 function itemCounts(array) {
   const counts = new Map();
