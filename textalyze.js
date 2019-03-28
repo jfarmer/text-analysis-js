@@ -4,29 +4,29 @@
  * @param {Map} counts - A Map containing the counts of the items in the input array
  */
 function itemCounts(array) {
-  let counts = new Map();
-
-  array.forEach(element => {
-    
-    if (!counts.has(element))
-      counts.set(element, 1);
-    else 
-      counts.set(element, counts.get(element) + 1);
-  });
+  let counts = array.reduce((accum, arrVal) => {
+    var newCount = accum.has(arrVal) ? accum.get(arrVal) + 1 : 1;
+    return accum.set(arrVal, newCount);
+  }, new Map());
 
   return counts;
 }
 
-module.exports = { itemCounts };
+function stringToCharacters(input) {
+  return (typeof(input) === 'string') ? input.split('') : [];
+}
 
-//
-// Running...
-//
+if (require.main == module) {
 
-var array = ['a', 'a', 'a', 'b', 'b', 'c'];
+  let strTest = 'AABBCCC';
+  let strArr = stringToCharacters(strTest);
 
-console.log("The counts for ", array, " are...");
+  console.log('The array of string ', strTest, ' is ', strArr);
+  console.log('And the counts for ', strArr, ' are: ');
 
-itemCounts(array).forEach(function(value, key) {
-  console.log(key, '   ', value);
-});
+  itemCounts(strArr).forEach(function(value, key) {
+    console.log(key, '   ', value);
+  });
+}
+
+module.exports = { itemCounts, stringToCharacters};
