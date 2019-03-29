@@ -1,4 +1,4 @@
-const { itemCounts, stringToCharacters} = require('../textalyze');
+const { itemCounts, stringToCharacters, sanitize} = require('../textalyze');
 
 describe('itemCount', () => {
   test('returns a count of the strings in the array', () => {
@@ -47,7 +47,7 @@ describe('stringToCharacter', () => {
 
   test('handles non-string inputs', () => {
     const input = 12345;
-    const expectedOutput = [];
+    const expectedOutput = ['1','2','3','4','5'];
 
     expect(stringToCharacters(input)).toEqual(expectedOutput);
   });
@@ -57,5 +57,28 @@ describe('stringToCharacter', () => {
     const expectedOutput = [];
 
     expect(stringToCharacters(input)).toEqual(expectedOutput);
+  });
+});
+
+describe('sanitize', () => {
+  test('returns a "sanitized" string that replaces all upper-case letters with their lower-case equivalent', () => {
+    const input = 'TeSt';
+    const expectedOutput = 'test';
+
+    expect(sanitize(input)).toEqual(expectedOutput);
+  });
+
+  test('handles non-string inputs', () => {
+    const input = 12345;
+    const expectedOutput = '12345';
+
+    expect(sanitize(input)).toEqual(expectedOutput);
+  });
+
+  test('returns an empty string when the string is empty', () => {
+    const input = '';
+    const expectedOutput = '';
+
+    expect(sanitize(input)).toEqual(expectedOutput);
   });
 });

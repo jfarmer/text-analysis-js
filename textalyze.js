@@ -5,7 +5,7 @@
  */
 function itemCounts(array) {
   let counts = array.reduce((accum, arrVal) => {
-    var newCount = accum.has(arrVal) ? accum.get(arrVal) + 1 : 1;
+    let newCount = accum.has(arrVal) ? accum.get(arrVal) + 1 : 1;
     return accum.set(arrVal, newCount);
   }, new Map());
 
@@ -13,20 +13,17 @@ function itemCounts(array) {
 }
 
 function stringToCharacters(input) {
-  return (typeof(input) === 'string') ? input.split('') : [];
+  return input.toString().split('');
+}
+
+function sanitize(input){
+  return input.toString().toLowerCase();
 }
 
 if (require.main == module) {
 
-  let strTest = 'AABBCCC';
-  let strArr = stringToCharacters(strTest);
+  const strTest = 'HEY: ThIs Is hArD tO rEaD!';
 
-  console.log('The array of string ', strTest, ' is ', strArr);
-  console.log('And the counts for ', strArr, ' are: ');
-
-  itemCounts(strArr).forEach(function(value, key) {
-    console.log(key, '   ', value);
-  });
 }
 
-module.exports = { itemCounts, stringToCharacters};
+module.exports = { itemCounts, stringToCharacters, sanitize};
