@@ -1,7 +1,5 @@
 const fs = require('fs');
 
-let result;
-
 /**
  * This is the base code for v0.1 of our JavaScript text analyzer.
  * Visit https://github.com/jfarmer/text-analysis to see what to do.
@@ -34,7 +32,7 @@ function itemCounts(array) {
  * @param {String}
  * @returns {Array}
  */
-function stringCharsToArray(string = '') {
+function stringCharsToArray(string) {
   const arrayString = string.split('');
   return itemCounts(arrayString);
 }
@@ -45,7 +43,7 @@ function stringCharsToArray(string = '') {
  * @param {String}
  * @returns {Array}
  */
-function sanitize(string = '') {
+function sanitize(string) {
   return string.toLowerCase();
 }
 
@@ -56,6 +54,25 @@ function readFromFile(file) {
   });
 }
 
+/**
+ * Given an input Array, returns a Map containing the Basic Frequency Statistics
+ * @param {Array}
+ * @returns {Map}
+ */
+function frequencyStatics(array) {
+  const counts = itemCounts(array);
+  const statistics = new Map();
+  let total = 0;
+
+  counts.forEach((value, index) => { total += counts.get(index); });
+  counts.forEach((value, index) => {
+    const frequency = (100 * value) / total;
+    statistics.set(index, frequency);
+  });
+
+  return statistics;
+}
+
 module.exports = {
-  itemCounts, stringCharsToArray, sanitize, readFromFile,
+  itemCounts, stringCharsToArray, sanitize, readFromFile, frequencyStatics,
 };
