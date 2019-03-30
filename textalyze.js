@@ -25,6 +25,13 @@ function onlyCharacters(input){
   return input.toString().replace(/[^a-zA-Z]+/g, '');
 }
 
+function getfilePath(){
+  let procArgv = process.argv;
+
+  if(procArgv.length <= 2) throw 'the path of the file was not specified!'
+  return procArgv.slice(2).toString();
+}
+
 function letterCountStatistics(path){
   fs.readFile(path,'utf8', (err, data) => {
     if (err) throw err;
@@ -40,8 +47,10 @@ function letterCountStatistics(path){
 }
 
 if (require.main == module) {
-  console.log('The letter count statistics for the file "moby-dick.txt" is: \n');
-  letterCountStatistics('./sample_data/moby-dick.txt');
+  let filePath = getfilePath()
+
+  console.log('The letter count statistics for the file', filePath, 'is: \n');
+  letterCountStatistics(filePath);
 }
 
 module.exports = { itemCounts, stringToCharacters, sanitize, onlyCharacters};
