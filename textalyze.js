@@ -82,12 +82,8 @@ function histogram(array = []) {
   });
 
   statistics.forEach((value, index) => {
-    let dash = '';
-
-    for (let i = 0; i <= value - 1; i += 1) {
-      dash += '=';
-    }
-    const line = `${index.padEnd(biggestStringLength)} [${value.toFixed(2)}%] ${dash}`;
+    const bar = '='.repeat(value);
+    const line = `${index.padEnd(biggestStringLength)} [${value.toFixed(2)}%] ${bar}`;
     console.log(line);
   });
 }
