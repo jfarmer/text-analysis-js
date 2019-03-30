@@ -38,8 +38,19 @@ function stringCharsToArray(string = '') {
   const arrayString = string.split('');
   return itemCounts(arrayString);
 }
-const string = 'testing it';
-result = stringCharsToArray(string);
+result = stringCharsToArray('testing it');
+console.log(result);
+
+/**
+ * Takes an arbitrary String as input and returns a "sanitized" string
+ * that replaces all upper-case letters with their lower-case equivalent
+ * @param {String}
+ * @returns {Array}
+ */
+function sanitize(string = '') {
+  return string.toLowerCase();
+}
+result = sanitize('HEY: ThIs Is hArD tO rEaD!');
 console.log(result);
 
 
