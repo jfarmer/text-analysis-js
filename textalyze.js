@@ -1,4 +1,7 @@
+const fs = require('fs');
+
 let result;
+
 /**
  * This is the base code for v0.1 of our JavaScript text analyzer.
  * Visit https://github.com/jfarmer/text-analysis to see what to do.
@@ -25,9 +28,6 @@ function itemCounts(array) {
 
   return counts;
 }
-const array = ['car', 'house', 'car', 'b', 'c', 'd', 'c'];
-result = itemCounts(array);
-console.log(result);
 
 /**
  * Takes an arbitrary String as input and returns an Array of all the characters in the string
@@ -38,8 +38,6 @@ function stringCharsToArray(string = '') {
   const arrayString = string.split('');
   return itemCounts(arrayString);
 }
-result = stringCharsToArray('testing it');
-console.log(result);
 
 /**
  * Takes an arbitrary String as input and returns a "sanitized" string
@@ -50,8 +48,14 @@ console.log(result);
 function sanitize(string = '') {
   return string.toLowerCase();
 }
-result = sanitize('HEY: ThIs Is hArD tO rEaD!');
-console.log(result);
 
+function readFromFile(file) {
+  fs.readFile(file, (err, data) => {
+    if (err) throw err;
+    return data.toString();
+  });
+}
 
-module.exports = { itemCounts };
+module.exports = {
+  itemCounts, stringCharsToArray, sanitize, readFromFile,
+};
