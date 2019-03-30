@@ -47,17 +47,26 @@ function sanitize(string) {
   return string.toLowerCase();
 }
 
+/**
+ * Takes an string containing the path to a file and returns the data
+ * @param {String} path to the file
+ * @returns {String} file data
+ */
 function readFromFile(file) {
-  fs.readFile(file, (err, data) => {
-    if (err) throw err;
-    return data.toString();
+  return new Promise((resolve, reject) => {
+    fs.readFile(file, (err, data) => {
+      if (err) {
+        return reject(new Error(err));
+      }
+      return resolve(data.toString());
+    });
   });
 }
 
 /**
  * Given an input Array, returns a Map containing the Basic Frequency Statistics
- * @param {Array}
- * @returns {Map}
+ * @param {Array} array of strings
+ * @returns {Map} map with frequencies
  */
 function frequencyStatics(array) {
   const counts = itemCounts(array);
