@@ -1,4 +1,4 @@
-const { itemCounts, stringToCharacters, sanitize} = require('../textalyze');
+const { itemCounts, stringToCharacters, sanitize, onlyCharacters} = require('../textalyze');
 
 describe('itemCount', () => {
   test('returns a count of the strings in the array', () => {
@@ -80,5 +80,28 @@ describe('sanitize', () => {
     const expectedOutput = '';
 
     expect(sanitize(input)).toEqual(expectedOutput);
+  });
+});
+
+describe('onlyCharacters', () => {
+  test('returns a string containing only characters', () => {
+    const input = 'a1b2c3';
+    const expectedOutput = 'abc';
+
+    expect(onlyCharacters(input)).toEqual(expectedOutput);
+  });
+
+  test('handles non-string inputs', () => {
+    const input = 12345;
+    const expectedOutput = '';
+
+    expect(onlyCharacters(input)).toEqual(expectedOutput);
+  });
+
+  test('returns an empty string when the string is empty', () => {
+    const input = '';
+    const expectedOutput = '';
+
+    expect(onlyCharacters(input)).toEqual(expectedOutput);
   });
 });
