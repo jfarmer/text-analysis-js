@@ -1,3 +1,4 @@
+let result;
 /**
  * This is the base code for v0.1 of our JavaScript text analyzer.
  * Visit https://github.com/jfarmer/text-analysis to see what to do.
@@ -25,6 +26,21 @@ function itemCounts(array) {
   return counts;
 }
 const array = ['car', 'house', 'car', 'b', 'c', 'd', 'c'];
-console.log(itemCounts(array));
+result = itemCounts(array);
+console.log(result);
+
+/**
+ * Takes an arbitrary String as input and returns an Array of all the characters in the string
+ * @param {String}
+ * @returns {Array}
+ */
+function stringCharsToArray(string = '') {
+  const arrayString = string.split('');
+  return itemCounts(arrayString);
+}
+const string = 'testing it';
+result = stringCharsToArray(string);
+console.log(result);
+
 
 module.exports = { itemCounts };
