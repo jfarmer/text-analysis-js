@@ -17,7 +17,14 @@ function itemCounts(array) {
   // Your code here.
   // Run 'npm test' to see what tests need to pass.
 
+  array.forEach((value) => {
+    const sum = counts.get(value) ? counts.get(value) + 1 : 1;
+    counts.set(value, sum);
+  });
+
   return counts;
 }
+const array = ['car', 'house', 'car', 'b', 'c', 'd', 'c'];
+console.log(itemCounts(array));
 
 module.exports = { itemCounts };
