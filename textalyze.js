@@ -1,10 +1,3 @@
-/**
- * This is the base code for v0.1 of our JavaScript text analyzer.
- * Visit https://github.com/jfarmer/text-analysis to see what to do.
- *
- * Send a message in Slack if you're stuck or unsure what to do.  These
- * comments are here to help you, but please delete them as you go along.
- */
 
 /**
  * Given an input Array, returns a Map containing the count of each item in the input.
@@ -12,12 +5,16 @@
  * @returns {Map} counts - A Map containing the counts of the items in the input array
  */
 function itemCounts(array) {
-  const counts = new Map();
+  return array.reduce(function(map, value) {
 
-  // Your code here.
-  // Run 'npm test' to see what tests need to pass.
+    if (map.get(value) === undefined) {
+      map.set(value, 1);
+    } else {
+      map.set(value, map.get(value) + 1);
+    }
 
-  return counts;
+    return map;
+  }, new Map());
 }
 
 module.exports = { itemCounts };
