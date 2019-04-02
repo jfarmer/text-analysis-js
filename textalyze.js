@@ -1,3 +1,13 @@
+
+/**
+ * Given a text, returns an array containing all of its chars.
+ * @param {String} text - The string to be get the chars from.
+ * @returns {Array} chars - The chars contained in the given text.
+ */
+function getChars(text) {
+  return [];
+}
+
 /**
  * Given an input Array, returns a Map containing the count of each item in the input.
  * @param {Array} array - The array of items to count
@@ -38,4 +48,4 @@ if (require.main == module) {
   console.log(getPrintStatistics(itemCounts(lettersArray)));
 }
 
-module.exports = { itemCounts };
+module.exports = { getChars, itemCounts };
