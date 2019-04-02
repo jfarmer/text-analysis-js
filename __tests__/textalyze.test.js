@@ -48,4 +48,8 @@ describe('getChars', () => {
 
     expect(getChars(input)).toEqual(expectedOutput)
   });
+
+  test('throws an error when the passed text isn\'t a string', () => {
+    expect(getChars).toThrow(new Error('The text parameter must be a string in order for this function to work.'));
+  });
 });

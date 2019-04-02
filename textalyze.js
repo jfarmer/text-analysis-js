@@ -5,6 +5,10 @@
  * @returns {Array} chars - The chars contained in the given text.
  */
 function getChars(text) {
+  if (typeof text !== 'string') {
+    throw new Error('The text parameter must be a string in order for this function to work.')
+  }
+
   return text.split('');
 }
 
