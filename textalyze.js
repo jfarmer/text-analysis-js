@@ -44,6 +44,6 @@ function logMapElements(value, key, map) {
   console.log(`char[${key}] = ${value} ocurrence(s)`);
 }
 
-charMap.forEach(logMapElements);
+charCounts.forEach(logMapElements);
 
 module.exports = { itemCounts };
