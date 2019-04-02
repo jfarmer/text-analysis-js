@@ -1,4 +1,4 @@
-const { getChars, itemCounts } = require('../textalyze');
+const { sanitize, getChars, itemCounts } = require('../textalyze');
 
 describe('itemCount', () => {
   test('returns a count of the strings in the array', () => {
@@ -51,5 +51,14 @@ describe('getChars', () => {
 
   test('throws an error when the passed text isn\'t a string', () => {
     expect(getChars).toThrow(new Error('The text parameter must be a string in order for this function to work.'));
+  });
+
+  describe('sanitize', () => {
+    test('returns the passed text in lowercase', () => {
+      const input = 'HEY: ThIs Is hArD tO rEaD!'
+      const expectedOutput = "hey: this is hard to read!"
+
+      expect(sanitize(input)).toEqual(expectedOutput)
+    });
   });
 });

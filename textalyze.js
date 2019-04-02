@@ -1,5 +1,14 @@
 
 /**
+ * Given a text, returns it formatted for analysis.
+ * @param {String} text - The text to be sinitized.
+ * @returns {String} sanitizedText - The sanitized text.
+ */
+function sanitize(text) {
+  return text.toLowerCase()
+}
+
+/**
  * Given a text, returns an array containing all of its chars.
  * @param {String} text - The string to be get the chars from.
  * @returns {Array} chars - The chars contained in the given text.
@@ -52,4 +61,4 @@ if (require.main == module) {
   console.log(getPrintStatistics(itemCounts(getChars(quoteText))));
 }
 
-module.exports = { getChars, itemCounts };
+module.exports = { sanitize, getChars, itemCounts };
