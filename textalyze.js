@@ -5,7 +5,7 @@
  * @returns {Array} chars - The chars contained in the given text.
  */
 function getChars(text) {
-  return [];
+  return text.split('');
 }
 
 /**

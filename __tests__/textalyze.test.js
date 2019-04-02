@@ -41,4 +41,11 @@ describe('getChars', () => {
   test('returns an empty array of chars if an empty text is passed', () => {
     expect(getChars("")).toEqual([]);
   });
+
+  test('returns the chars passed in the array', () => {
+    const input = 'Testing input';
+    const expectedOutput = ['T', 'e', 's', 't', 'i', 'n', 'g', ' ', 'i', 'n', 'p', 'u', 't'];
+
+    expect(getChars(input)).toEqual(expectedOutput)
+  });
 });
