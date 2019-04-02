@@ -43,13 +43,13 @@ function getPrintStatistics(map) {
 
 if (require.main == module) {
   /**
-   * The hard coded array used to illustrate how the statistics would be printed.
+   * The hard coded string used to illustrate how the statistics would be printed.
    * TODO: Remove this later on.
    */
-  let lettersArray = ['a', 'a', 'a', 'b', 'b', 'c'];
+  let quoteText = 'Great men are not born great, they grow great...';
 
-  console.log(`The counts for ${lettersArray} are...`);
-  console.log(getPrintStatistics(itemCounts(lettersArray)));
+  console.log(`The analysis of the '${quoteText}' quote are...`);
+  console.log(getPrintStatistics(itemCounts(getChars(quoteText))));
 }
 
 module.exports = { getChars, itemCounts };
