@@ -1,9 +1,4 @@
 /**
- * The hard coded array used to illustrate the first iteration.
- */
-let arrayToBeCounted = ["a", "a", "a", "b", "b", "c"]
-
-/**
  * Given an input Array, returns a Map containing the count of each item in the input.
  * @param {Array} array - The array of items to count
  * @returns {Map} counts - A Map containing the counts of the items in the input array
@@ -32,7 +27,15 @@ function getPrintStatistics(map) {
   return output
 }
 
-console.log(`The counts for ${arrayToBeCounted} are...`)
-console.log(getPrintStatistics(itemCounts(arrayToBeCounted)))
+if (require.main == module) {
+  /**
+   * The hard coded array used to illustrate how the statistics would be printed.
+   * TODO: Remove this later on.
+   */
+  let lettersArray = ["a", "a", "a", "b", "b", "c"]
+
+  console.log(`The counts for ${lettersArray} are...`)
+  console.log(getPrintStatistics(itemCounts(lettersArray)))
+}
 
 module.exports = { itemCounts };
