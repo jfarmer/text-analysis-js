@@ -10,12 +10,8 @@ let arrayToBeCounted = ["a", "a", "a", "b", "b", "c"]
  */
 function itemCounts(array) {
   return array.reduce(function(map, value) {
-
-    if (map.get(value) === undefined) {
-      map.set(value, 1);
-    } else {
-      map.set(value, map.get(value) + 1);
-    }
+    const currentCount = map.has(value) ? map.get(value) : 0
+    map.set(value, currentCount + 1)
 
     return map;
   }, new Map());
