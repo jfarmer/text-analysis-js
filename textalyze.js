@@ -59,10 +59,10 @@ if (require.main == module) {
    * The hard coded string used to illustrate how the statistics would be printed.
    * TODO: Remove this later on.
    */
-  let quoteText = 'Great men are not born great, they grow great...';
+  const sanitizedQuoteText = sanitize('Great men are not born great, they grow great...');
 
-  console.log(`The analysis of the '${quoteText}' quote are...`);
-  console.log(getPrintStatistics(itemCounts(getChars(quoteText))));
+  console.log(`The analysis of the '${sanitizedQuoteText}' quote are...`);
+  console.log(getPrintStatistics(itemCounts(getChars(sanitizedQuoteText))));
 }
 
 module.exports = { sanitize, getChars, itemCounts };
