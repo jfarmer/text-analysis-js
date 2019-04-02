@@ -26,13 +26,13 @@ function getPrintStatistics(map) {
   let output = ""
 
   for (let [key, value] of map) {
-    output += key + " \t " + value + "\n"
+    output += `${key} \t ${value} \n`
   }
 
   return output
 }
 
-console.log("The counts for " + arrayToBeCounted + " are...")
+console.log(`The counts for ${arrayToBeCounted} are...`)
 console.log(getPrintStatistics(itemCounts(arrayToBeCounted)))
 
 module.exports = { itemCounts };
