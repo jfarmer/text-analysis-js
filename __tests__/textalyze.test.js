@@ -39,7 +39,7 @@ describe('itemCount', () => {
 
 describe('getChars', () => {
   test('returns an empty array of chars if an empty text is passed', () => {
-    expect(getChars("")).toEqual([]);
+    expect(getChars('')).toEqual([]);
   });
 
   test('returns the chars passed in the array', () => {

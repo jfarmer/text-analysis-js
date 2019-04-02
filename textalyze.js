@@ -28,7 +28,7 @@ function itemCounts(array) {
  * @returns {String} text - The text to be displayed to the user.
  */
 function getPrintStatistics(map) {
-  let output = "";
+  let output = '';
 
   for (let [key, value] of map) {
     output += `${key} \t ${value} \n`;
@@ -42,7 +42,7 @@ if (require.main == module) {
    * The hard coded array used to illustrate how the statistics would be printed.
    * TODO: Remove this later on.
    */
-  let lettersArray = ["a", "a", "a", "b", "b", "c"];
+  let lettersArray = ['a', 'a', 'a', 'b', 'b', 'c'];
 
   console.log(`The counts for ${lettersArray} are...`);
   console.log(getPrintStatistics(itemCounts(lettersArray)));
