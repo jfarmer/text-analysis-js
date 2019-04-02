@@ -1,4 +1,4 @@
-const { itemCounts } = require('../textalyze');
+const { getChars, itemCounts } = require('../textalyze');
 
 describe('itemCount', () => {
   test('returns a count of the strings in the array', () => {
@@ -34,5 +34,22 @@ describe('itemCount', () => {
     const expectedOutput = new Map([['a', 2], ['A', 2]]);
 
     expect(itemCounts(input)).toEqual(expectedOutput);
+  });
+});
+
+describe('getChars', () => {
+  test('returns an empty array of chars if an empty text is passed', () => {
+    expect(getChars('')).toEqual([]);
+  });
+
+  test('returns the chars passed in the array', () => {
+    const input = 'Testing input';
+    const expectedOutput = ['T', 'e', 's', 't', 'i', 'n', 'g', ' ', 'i', 'n', 'p', 'u', 't'];
+
+    expect(getChars(input)).toEqual(expectedOutput)
+  });
+
+  test('throws an error when the passed text isn\'t a string', () => {
+    expect(getChars).toThrow(new Error('The text parameter must be a string in order for this function to work.'));
   });
 });

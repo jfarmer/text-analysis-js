@@ -1,3 +1,17 @@
+
+/**
+ * Given a text, returns an array containing all of its chars.
+ * @param {String} text - The string to be get the chars from.
+ * @returns {Array} chars - The chars contained in the given text.
+ */
+function getChars(text) {
+  if (typeof text !== 'string') {
+    throw new Error('The text parameter must be a string in order for this function to work.')
+  }
+
+  return text.split('');
+}
+
 /**
  * Given an input Array, returns a Map containing the count of each item in the input.
  * @param {Array} array - The array of items to count
@@ -18,7 +32,7 @@ function itemCounts(array) {
  * @returns {String} text - The text to be displayed to the user.
  */
 function getPrintStatistics(map) {
-  let output = "";
+  let output = '';
 
   for (let [key, value] of map) {
     output += `${key} \t ${value} \n`;
@@ -29,13 +43,13 @@ function getPrintStatistics(map) {
 
 if (require.main == module) {
   /**
-   * The hard coded array used to illustrate how the statistics would be printed.
+   * The hard coded string used to illustrate how the statistics would be printed.
    * TODO: Remove this later on.
    */
-  let lettersArray = ["a", "a", "a", "b", "b", "c"];
+  let quoteText = 'Great men are not born great, they grow great...';
 
-  console.log(`The counts for ${lettersArray} are...`);
-  console.log(getPrintStatistics(itemCounts(lettersArray)));
+  console.log(`The analysis of the '${quoteText}' quote are...`);
+  console.log(getPrintStatistics(itemCounts(getChars(quoteText))));
 }
 
-module.exports = { itemCounts };
+module.exports = { getChars, itemCounts };
