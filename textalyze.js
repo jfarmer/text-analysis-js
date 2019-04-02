@@ -5,6 +5,10 @@
  * @returns {String} sanitizedText - The sanitized text.
  */
 function sanitize(text) {
+  if (typeof text !== 'string') {
+    throw new Error('Only texts can be sanitized.')
+  }
+
   return text.toLowerCase()
 }
 

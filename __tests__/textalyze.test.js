@@ -60,5 +60,9 @@ describe('getChars', () => {
 
       expect(sanitize(input)).toEqual(expectedOutput)
     });
+
+    test('throws an error when the passed text isn\'t a string', () => {
+      expect(sanitize).toThrow(new Error('Only texts can be sanitized.'))
+    });
   });
 });
