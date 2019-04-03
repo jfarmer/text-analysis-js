@@ -14,9 +14,19 @@
 function itemCounts(array) {
   const counts = new Map();
 
-  // Your code here.
-  // Run 'npm test' to see what tests need to pass.
+  var a = NaN;
+  var count = 0;
 
+  for(var i = 0; i < array.length; i++) {
+    a = array[i];
+    for (var j = 0; j < array.length; j++) {
+      if (array[j] === a) {
+        count++;
+      }
+    }
+    counts.set(a, count);
+    count = 0;
+  }
   return counts;
 }
 
