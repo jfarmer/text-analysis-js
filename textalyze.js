@@ -55,14 +55,18 @@ function getPrintStatistics(map) {
 }
 
 if (require.main == module) {
-  /**
-   * The hard coded string used to illustrate how the statistics would be printed.
-   * TODO: Remove this later on.
-   */
-  const sanitizedQuoteText = sanitize('Great men are not born great, they grow great...');
+  const fs = require('fs');
 
-  console.log(`The analysis of the '${sanitizedQuoteText}' quote are...`);
-  console.log(getPrintStatistics(itemCounts(getChars(sanitizedQuoteText))));
+  fs.readFile('sample_data/moby-dick.full.txt', 'utf8', (error, data) => {
+    if (error) {
+      throw error;
+    }
+
+    const sanitizedText = sanitize(data);
+
+    console.log(`The analysis of the moby dick book is...`);
+    console.log(getPrintStatistics(itemCounts(getChars(sanitizedText))));
+  });  
 }
 
 module.exports = { sanitize, getChars, itemCounts };
