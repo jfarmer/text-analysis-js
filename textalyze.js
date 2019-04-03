@@ -26,7 +26,9 @@ function toChar(string) {
 	return string.slice();
 }
 
-var sanitizedString = sanitize("Olá! Meu nome é Robson.");
+var fileToString = readFromFile('great-gatsby.txt');
+
+var sanitizedString = sanitize(fileToString);
 
 var charArray = toChar(sanitizedString);
 
@@ -40,6 +42,14 @@ charCounts.forEach(logMapElements);
 
 function sanitize(string) {
 	return string.toLowerCase();
+}
+
+function readFromFile(string) {
+	const fs = require('fs');
+	const path = require('path');
+	var filePath = path.join(__dirname, 'sample_data', string);
+	var content = fs.readFileSync(filePath).toString();
+	return content;
 }
 
 module.exports = { itemCounts };
