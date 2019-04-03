@@ -54,19 +54,27 @@ function getPrintStatistics(map) {
   return output;
 }
 
-if (require.main == module) {
+/**
+ * Given a file path, read the file and analyzes its text, printing the statistics to the user.
+ * @param {String} path - The path of the file to be analyzed.
+ */
+function analyzeFile(path) {
   const fs = require('fs');
 
-  fs.readFile('sample_data/moby-dick.full.txt', 'utf8', (error, data) => {
+  fs.readFile(path, 'utf8', (error, data) => {
     if (error) {
       throw error;
     }
 
     const sanitizedText = sanitize(data);
 
-    console.log(`The analysis of the moby dick book is...`);
+    console.log(`The analysis of the file at ${path} is...`);
     console.log(getPrintStatistics(itemCounts(getChars(sanitizedText))));
   });  
+}
+
+if (require.main == module) {
+  analyzeFile('sample_data/moby-dick.full.txt')
 }
 
 module.exports = { sanitize, getChars, itemCounts };
