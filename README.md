@@ -144,7 +144,7 @@ sanitize('WHY AM I YELLING?')          // => 'why am i yelling?'
 sanitize('HEY: ThIs Is hArD tO rEaD!') // => 'hey: this is hard to read!'
 ```
 
-Lucky for us, Ruby comes with a built-in method to help us:
+Lucky for us, JavaScript comes with a built-in method to help us:
 [String.prototype.toLowerCase][docs-javascript-string-tolowercase].
 
 Integrate this method into current program so that the `Map` of results
