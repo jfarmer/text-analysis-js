@@ -27,6 +27,8 @@ function itemCounts(array) {
   const counts = new Map();
   var element = "";
   var count = 0;
+  var bar = '=';
+  var barSize = 500;
 
   for(var i = 0; i < array.length; i++) {
     element = array[i];
@@ -35,7 +37,10 @@ function itemCounts(array) {
         count++;
       }
     }
-    counts.set(element, (count / array.length).toFixed(2));
+    var frequency = (count / array.length);
+    var numberOfBars = (frequency * 100) / (100 / barSize);
+    var chart = Array(barSize).fill(bar, 0, numberOfBars).join('');
+    counts.set(element, (frequency * 100).toFixed(2) + '% ' + chart);
     count = 0;
   }
 
@@ -43,7 +48,7 @@ function itemCounts(array) {
 }
 
 function logMapElements(value, key, map) {
-  console.log(`{ \'${key}\' : ${value} }`);
+  console.log(`${key} = ${value}`);
 }
 
 var fileToString = readFromFile(userInput());
