@@ -35,7 +35,7 @@ function itemCounts(array) {
         count++;
       }
     }
-    counts.set(element, count);
+    counts.set(element, (count / array.length).toFixed(2));
     count = 0;
   }
 
@@ -43,7 +43,7 @@ function itemCounts(array) {
 }
 
 function logMapElements(value, key, map) {
-  console.log(`char[${key}] = ${value} ocurrence(s)`);
+  console.log(`{ \'${key}\' : ${value} }`);
 }
 
 var fileToString = readFromFile(userInput());
